@@ -1,0 +1,13 @@
+
+<div *ngIf="contact">
+    <h2>Contact Details</h2>
+    <p><strong>First Name:</strong> {{ contact.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ contact.lastName }}</p>
+    <p><strong>Email:</strong> {{ contact.email }}</p>
+    <p><strong>Category:</strong> {{ contact.category.name }}</p>
+    <p><strong>Sub Category:</strong> {{ contact.subCategory }}</p>
+    <p><strong>Phone Number:</strong> {{ contact.phoneNumber }}</p>
+    <p><strong>Date of Birth:</strong> {{ contact.dateOfBirth }}</p>
+    <a class="btn btn-primary" routerLink="/contacts">Back to Contact List</a>
+  </div>
+  

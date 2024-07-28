@@ -1,0 +1,15 @@
+<!-- src/app/components/login/login.component.html -->
+<h2 *ngIf="!isLoggedIn">Login</h2>
+<h2 *ngIf="isLoggedIn"> Logged In correctly</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div *ngIf="!isLoggedIn">
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email">
+  </div>
+  <div *ngIf="!isLoggedIn">
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password">
+  </div>
+  <button type="submit" >Login</button>
+  <button type="button" (click)="logout()">Logout</button>
+</form>

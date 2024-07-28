@@ -1,0 +1,34 @@
+
+<div class="container">
+    <h2>Contact List</h2>
+  
+    <!-- Przyciski do dodawania nowych kontaktów -->
+    <div class="mb-3" *ngIf="isLoggedIn">
+      <a class="btn btn-primary" routerLink="/add">Add New Contact</a>
+    </div>
+  
+    <!-- Wyświetlanie listy kontaktów -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th *ngIf="isLoggedIn">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts">
+          <td>{{ contact.firstName }}</td>
+          <td>{{ contact.lastName }}</td>
+          <td>{{ contact.email }}</td>
+          <td *ngIf="isLoggedIn">
+            <a [routerLink]="['/detail', contact.id]" class="btn btn-warning btn-sm">Details</a>
+            <button [routerLink]="['/edit', contact.id]">Edit</button>
+            <button (click)="deleteContact(contact.id)" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
